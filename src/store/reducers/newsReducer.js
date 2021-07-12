@@ -1,14 +1,21 @@
-import { GET_NEWS, ERROR_NEWS } from '../types';
+import { GET_NEWS, SEARCH_NEWS, ERROR_NEWS } from '../types';
 
 const initialSate = {
     news: [],
-    loading: true
+    loading: true,
+    error: null,
 };
 
- const newsReducer = (state = initialSate, action) => {
+const newsReducer = (state = initialSate, action) => {
 
     switch(action.type){
         case GET_NEWS:
+            return{
+                ...state,
+                news: action.payload,
+                loading: false
+            }
+        case SEARCH_NEWS:
             return{
                 ...state,
                 news: action.payload,
@@ -24,5 +31,3 @@ const initialSate = {
 };
 
 export default newsReducer;
-
-
