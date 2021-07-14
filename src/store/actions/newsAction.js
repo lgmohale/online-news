@@ -8,7 +8,7 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 export const getNews = () => async dispatch => {
     try{
-        const res = await axios.get(`https://newsapi.org/v2/everything?&from=${todayDate}&apiKey=${apiKey}`)
+        const res = await axios.get(`https://newsapi.org/v2/everything?q=tesla&from=${todayDate}&sortBy=publishedAt&apiKey=${apiKey}`)
         dispatch({
             type: GET_NEWS,
             payload: res.data.articles
