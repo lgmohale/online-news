@@ -22,7 +22,7 @@ const News = () => {
             <Grid container spacing={2}>
             {
             loading ? <Spinner style={{marginLeft: '50%'}}/> : 
-            error ? error.message : 
+            error ? <Typography style={{marginLeft: '50%'}}>{error.message}</Typography> : 
             news.map((index, key)=> 
             <Grid item xs={12} sm={6} key={key}>
                 <Paper className={classes.card}>

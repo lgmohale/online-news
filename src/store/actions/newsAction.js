@@ -2,7 +2,7 @@ import { GET_NEWS, SEARCH_NEWS, ERROR_NEWS } from '../types';
 import moment from 'moment';
 import axios from 'axios';
 
-const todayDate = moment().format('YYYY-MMMM-D')
+const todayDate = moment().format('YYYY-MM-D')
 
 const apiKey = process.env.REACT_APP_API_KEY;
 

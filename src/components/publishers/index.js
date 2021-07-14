@@ -8,24 +8,25 @@ const Publishers = () => {
 
     const dispatch = useDispatch();
     const newsListData = useSelector(state => state.newsList);
-    const { news, loading } = newsListData;
+    const { news, loading, error } = newsListData;
+    console.log('publisger')
 
-    return(
+    return !loading ? error ? '' :(
         <Container>
             <Divider />
             <Typography>PUBLISHERS</Typography>
-            {!loading && news !== null?
+            {
                 news.map((index, key) =>
                 <List key={key}>
                     <ListItem button>
                         <ListItemText primary={index.author ? index.author : "Unknown Author" } onClick={dispatch(searchNews(index.author))}/>
                     </ListItem>
                 </List>
-                ): ''
+                )
             }
             <Divider />
         </Container>
-    );
+    ) : '';
 };
 
 export default Publishers;
