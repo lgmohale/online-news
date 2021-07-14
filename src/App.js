@@ -15,7 +15,7 @@ const App = () => {
           <NewsComponent />
         </Grid>
         <Grid item xs={4}>
-        < Publishers />
+          < Publishers />
         </Grid>
       </Grid>
     </div>
